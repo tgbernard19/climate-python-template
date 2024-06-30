@@ -44,7 +44,6 @@ df
 )
 ```
 
-
 Which months are the CO2 values at the maximum? Minimum?  Why is this?
 
 What rolling average is used in computing the "trend" line?  How does the trend depend on the rolling average?

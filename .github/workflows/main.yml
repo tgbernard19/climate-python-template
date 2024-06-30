@@ -1,18 +1,15 @@
 on: push
-      
-name: Reproducibility
+name: Reproducibility Check
 
 jobs:
   render:
-    name: Render assignment
-    runs-on: self-hosted
+    name: execute notebook
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
       - name: Install Dependencies
-        run: |-
-          pip install -e requirements.txt
+        run: pip install -e requirements.txt
       - name: test
-        run: |-
-          jupyter execute climate.ipynb
+        run: pytest --nbval-lax climate.ipynb
