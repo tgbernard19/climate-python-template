@@ -4,6 +4,7 @@ name: Reproducibility Check
 jobs:
   render:
     name: execute notebook
+    runs-on: ubuntu
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
