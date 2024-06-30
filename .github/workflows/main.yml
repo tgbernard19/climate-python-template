@@ -11,6 +11,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
       - name: Install Dependencies
-        run: pip install -e requirements.txt
+        run: pip install -r requirements.txt
       - name: test
         run: pytest --nbval-lax climate.ipynb
