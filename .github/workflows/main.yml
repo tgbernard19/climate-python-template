@@ -1,0 +1,18 @@
+on: push
+      
+name: Reproducibility
+
+jobs:
+  render:
+    name: Render assignment
+    runs-on: self-hosted
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: |-
+          pip install -e requirements.txt
+      - name: test
+        run: |-
+          jupyter execute climate.ipynb
