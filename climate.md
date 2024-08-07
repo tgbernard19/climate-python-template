@@ -50,6 +50,10 @@ What rolling average is used in computing the "trend" line?  How does the trend 
 
 ------------------------
 
++++
+
+:::{tip} Exercises
+
 # Exercise I: Temperature Data
 
 Each of the last years has consecutively set new records on global climate.  In this section we will analyze global mean temperature data.
@@ -64,19 +68,23 @@ Describe the data set to the best of your ability given the documentation provid
 - What is the resolution of the data?
 - Are their missing values? How should they be handled?
 
++++
 
 ## Question 2:
 
 Construct the necessary python code to import and prepare for manipulation the following data set: <http://climate.nasa.gov/system/internal_resources/details/original/647_Global_Temperature_Data_File.txt>
 
+```{code-cell} ipython3
+
+```
 
 ## Question 3:
 
 Plot the trend in global mean temperatures over time.  Describe what you see in the plot and how you interpret the patterns you observe.
 
+```{code-cell} ipython3
 
-
-
+```
 
 # Exercise II: Melting Ice Sheets?
 
@@ -88,16 +96,25 @@ Plot the trend in global mean temperatures over time.  Describe what you see in 
 - Describe the data set: what are the columns and units? Where do the numbers come from? 
 - What is the uncertainty in measurment? Resolution of the data? Interpretation of missing values?
 
+```{code-cell} ipython3
+
+```
 
 ## Question 2:
 
 Construct the necessary code to import this data set.
 
+```{code-cell} ipython3
+
+```
+
 ## Question 3:
 
 Plot the data and describe the trends you observe.
 
+```{code-cell} ipython3
 
+```
 
 # Exercise III: Rising Sea Levels?
 
@@ -111,22 +128,30 @@ Plot the data and describe the trends you observe.
 - Where do these data come from? 
 - What is the uncertainty in measurment? Resolution of the data? Interpretation of missing values?
 
+```{code-cell} ipython3
+
+```
 
 ## Question 2:
 
 Construct the necessary R code to import this data set as a tidy `Table` object.
 
+```{code-cell} ipython3
+
+```
+
 ## Question 3:
 
 Plot the data and describe the trends you observe.
 
+```{code-cell} ipython3
 
+```
 
 # Exercise IV: Arctic Sea Ice?
 
 - <http://nsidc.org/data/G02135>
 - <ftp://sidads.colorado.edu/DATASETS/NOAA/G02135/north/daily/data/N_seaice_extent_daily_v3.0.csv>
-
 
 ## Question 1:
 
@@ -134,15 +159,23 @@ Plot the data and describe the trends you observe.
 - Where do these data come from? 
 - What is the uncertainty in measurement? Resolution of the data? Interpretation of missing values?
 
++++
 
 ## Question 2:
 
 Construct the necessary code to import this data set
 
+```{code-cell} ipython3
+
+```
+
 ## Question 3:
 
-Plot the data and describe the trends you observe.    
+Plot the data and describe the trends you observe.
 
+```{code-cell} ipython3
+
+```
 
 # Exercise V: Longer term trends in CO2 Records
 
@@ -168,3 +201,7 @@ Vostok Core, back to 400,000 yrs before present day
 - Join this series to Mauna Loa data
 - Plot joined data
 - Describe your conclusions
+
+```{code-cell} ipython3
+
+```
