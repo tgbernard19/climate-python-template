@@ -20,28 +20,18 @@ kernelspec:
 - Raw data from <https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt>
 
 ```{code-cell} ipython3
-import ibis
-import altair as alt
+import pandas as pd
+import seaborn as sns
 ```
 
 ```{code-cell} ipython3
-con = ibis.pandas.connect()
-columns = ['year', 'day', 'decimal_date', 'average', 'smooth', 'std_days', 'uncertainty', 'empty']
-df = (con
-      .read_csv("https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt", sep="\s+", comment="#", names= columns)
-      .to_pandas()
-     )
+columns = ['year', 'month', 'decimal_date', 'average', 'smooth', 'std_days', 'uncertainty', 'empty']
+df = pd.read_csv("https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt", sep="\s+", comment="#", names= columns)
 df
 ```
 
 ```{code-cell} ipython3
-(alt
- .Chart(df)
- .mark_line()
- .encode(alt.X('decimal_date').scale(zero=False), 
-         alt.Y('average').scale(zero=False))
- .properties(width=800)
-)
+sns.lineplot(df, x="decimal_date", y="average")
 ```
 
 Which months are the CO2 values at the maximum? Minimum?  Why is this?
@@ -52,9 +42,9 @@ What rolling average is used in computing the "trend" line?  How does the trend 
 
 +++
 
-:::{tip} Exercises
+:::{tip} Exercise 1
 
-# Exercise I: Temperature Data
+# Temperature Data
 
 Each of the last years has consecutively set new records on global climate.  In this section we will analyze global mean temperature data.
 
@@ -151,7 +141,7 @@ Plot the data and describe the trends you observe.
 # Exercise IV: Arctic Sea Ice?
 
 - <http://nsidc.org/data/G02135>
-- <ftp://sidads.colorado.edu/DATASETS/NOAA/G02135/north/daily/data/N_seaice_extent_daily_v3.0.csv>
+- <https://noaadata.apps.nsidc.org/NOAA/G02135/north/monthly/data/>
 
 ## Question 1:
 
