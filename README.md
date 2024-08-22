@@ -13,7 +13,7 @@
 :octocat: Use of GitHub  
 :snake: Use of Jupyter Notebooks  
 :abcd: Accessing tabular data  
-📈 Data visualization
+📈 Data visualization  
 🌡️Become familiar with data on global climate change
 
 
