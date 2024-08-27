@@ -4,7 +4,7 @@ name: Reproducibility Check
 jobs:
   render:
     name: execute notebook
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-espm157 # ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -13,4 +13,6 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: test
-        run: pytest --nbval-lax climate.ipynb
+        run: pytest --nbval-lax *.ipynb
+#      - name: render
+#        run: myst build climate.md --pdf
