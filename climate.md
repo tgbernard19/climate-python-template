@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.2
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -21,7 +21,7 @@ kernelspec:
 
 ```{code-cell} ipython3
 import pandas as pd
-import seaborn as sns
+import seaborn.objects as so
 ```
 
 ```{code-cell} ipython3
@@ -31,7 +31,10 @@ df
 ```
 
 ```{code-cell} ipython3
-sns.lineplot(df, x="decimal_date", y="average")
+(
+    so.Plot(df, x="decimal_date", y="average")
+    .add(so.Line())
+)
 ```
 
 Which months are the CO2 values at the maximum? Minimum?  Why is this?
