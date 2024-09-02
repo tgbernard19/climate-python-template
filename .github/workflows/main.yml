@@ -4,13 +4,19 @@ name: Reproducibility Check
 jobs:
   render:
     name: execute notebook
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-espm157 # ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
+        with:
+            python-version: '3.11.9' 
       - name: Install Dependencies
         run: pip install -r requirements.txt
       - name: test
-        run: pytest --nbval-lax climate.ipynb
+        run: |
+             rm -f github-login.ipynb # exclude login from testing
+             pytest --nbval-lax *.ipynb
+#      - name: render
+#        run: myst build climate.md --pdf
