@@ -5,7 +5,7 @@
 
 ## Team Members
 
-🦸
+🦸 Tyler
 🦹
 
 ## 🎓 Learning Objectives
